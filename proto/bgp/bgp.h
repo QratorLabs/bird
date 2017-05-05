@@ -258,7 +258,6 @@ static inline void set_next_hop(byte *b, ip_addr addr) { ((ip_addr *) b)[0] = ad
 static inline void set_next_hop(byte *b, ip_addr addr) { ((ip_addr *) b)[0] = addr; }
 #endif
 
-void bgp_set_attr(eattr *e, unsigned attr, uintptr_t val);
 void bgp_attach_attr(struct ea_list **to, struct linpool *pool, unsigned attr, uintptr_t val);
 byte *bgp_attach_attr_wa(struct ea_list **to, struct linpool *pool, unsigned attr, unsigned len);
 struct rta *bgp_decode_attrs(struct bgp_conn *conn, byte *a, uint len, struct linpool *pool, int mandatory);
@@ -325,7 +324,6 @@ void bgp_log_error(struct bgp_proto *p, u8 class, char *msg, unsigned code, unsi
 #define BA_AS4_PATH             0x11    /* [RFC4893] */
 #define BA_AS4_AGGREGATOR       0x12
 #define BA_iOTC        0x13 /* [draft-ymbk-idr-bgp-open-policy] */
-#define BA_eOTC        0x14
 
 /* BGP connection states */
 

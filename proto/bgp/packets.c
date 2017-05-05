@@ -1139,21 +1139,9 @@ bgp_rte_update(struct bgp_proto *p, ip_addr prefix, int pxlen,
 
   net *n = net_get(p->p.table, prefix, pxlen);
 
-  int is_leak = 0; /* Small workaround */
   int prefix_role = ROLE_UNDE;
   if (p->cf->role == ROLE_COMP) prefix_role = rm_run(p->cf->role_map, n);
   if (p->cf->role == ROLE_COMP && (prefix_role == ROLE_UNDE || prefix_role == ROLE_UNKN)) return;
-  eattr * eOTC_eattr = ea_find(a0->eattrs, EA_CODE(EAP_BGP, BA_eOTC));
-  if ( (p->cf->role == ROLE_PEER ||
-        p->cf->role == ROLE_PROV ||
-        prefix_role == ROLE_PEER ||
-        prefix_role == ROLE_PROV) &&
-        eOTC_eattr &&
-        p->conn->bgp->remote_as != eOTC_eattr->u.data)
-    {
-      bgp_set_attr(ea_find(a0->eattrs, EA_CODE(EAP_BGP, BA_LOCAL_PREF)), BA_LOCAL_PREF, DEF_LOCAL_PREF_LEAK);
-      is_leak = 1;
-    }
   if ( (p->cf->role == ROLE_PEER ||
         p->cf->role == ROLE_CUST ||
         prefix_role == ROLE_PEER ||
@@ -1173,7 +1161,7 @@ bgp_rte_update(struct bgp_proto *p, ip_addr prefix, int pxlen,
     }
 
   rte *e = rte_get_temp(rta_clone(*a));
-  e->flags = is_leak ? REF_LEAKED : 0;
+  e->flags = 0;
   e->net = n;
   e->pflags = 0;
   e->u.bgp.suppressed = 0;

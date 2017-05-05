@@ -2445,7 +2445,7 @@ rt_show_net(struct cli *c, net *n, struct rt_show_data *d)
 
   for (e = n->routes; e; e = e->next)
     {
-      if (rte_is_filtered(e) != d->filtered || (d->leaked && rte_is_leaked(e) != d->leaked))
+      if (rte_is_filtered(e) != d->filtered)
 	continue;
 
       d->rt_counter++;
