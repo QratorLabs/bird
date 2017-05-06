@@ -228,6 +228,7 @@ typedef struct rte {
 #define REF_FILTERED	2		/* Route is rejected by import filter */
 #define REF_STALE	4		/* Route is stale in a refresh cycle */
 #define REF_DISCARD	8		/* Route is scheduled for discard */
+#define REF_LEAKED	16		/* BGP route is leaked */
 
 /* Route is valid for propagation (may depend on other flags in the future), accepts NULL */
 static inline int rte_is_valid(rte *r) { return r && !(r->flags & REF_FILTERED); }
@@ -235,7 +236,8 @@ static inline int rte_is_valid(rte *r) { return r && !(r->flags & REF_FILTERED);
 /* Route just has REF_FILTERED flag */
 static inline int rte_is_filtered(rte *r) { return !!(r->flags & REF_FILTERED); }
 
-
+/* Route has REF_LEAKED flag */
+static inline int rte_is_leaked(rte *r) { return !!(r->flags & REF_LEAKED); }
 
 
 /* Types of route announcement, also used as flags */
