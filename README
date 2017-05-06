@@ -3,28 +3,8 @@
 
 
 
-This is a fork of BIRD Routing daemon (v1.5.0) with built in protection against
-BGP route leaks.  Route leak is a network anomaly, when route learned from
-provider or peer is announced to another provider or peer.  The effect of such
-issues could vary from increased network delays for victim (originator of prefix)
-to DoS for both victim and leaker.
-This BGP implementation supports full compatibility with other BGP implementations
-except the case where strict_mode is set by user.
-
-
-Change in BGP Configuration:
-In each BGP protocol section you must set a role option.  Currently, there
-are 5 possible values for this option:
-1) "provider" - sender is transit provider to neigbor;
-2) "customer" - sender is customer of neigbor;
-3) "peer" - sender and neighbor are peers;
-4) "internal" - sender is part of an internal AS of an organsation which has multiple ASs;
-5) "complex" - sender want to use per prefix role policies.
-Without setting a role in BGP protocol section you will receive error message
-from config parser.
-Also you could set strict_mode option in BGP protocol section. In this scenario
-BGP session with your neighbor will be established only if your neighbor also
-support Roles and corresponding Role is correct.
+This branch is an extension of master branch, that change some aspects of 
+BGP Logic in accordance with draft-ymbk-idr-isp-border.
 
 
 BGP Logic modification:
