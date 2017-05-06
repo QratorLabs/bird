@@ -1,0 +1,28 @@
+f-util.o: ../../filter/f-util.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../conf/conf.h \
+ ../lib/timer.h ../../filter/filter.h ../../nest/route.h \
+ ../../nest/protocol.h ../../nest/attrs.h
+filter.o: ../../filter/filter.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../lib/socket.h \
+ ../../nest/route.h ../lib/timer.h ../../nest/protocol.h ../conf/conf.h \
+ ../../nest/iface.h ../../nest/attrs.h ../../filter/filter.h
+tree.o: ../../filter/tree.c ../lib/alloca.h ../../nest/bird.h \
+ ../../sysdep/config.h ../sysdep/autoconf.h ../.././sysdep/cf/linux.h \
+ ../sysdep/paths.h ../lib/birdlib.h ../lib/timer.h ../lib/resource.h \
+ ../lib/lists.h ../lib/lists.c ../lib/alloca.h ../lib/ip.h \
+ ../lib/endian.h ../lib/string.h ../lib/bitops.h ../lib/unaligned.h \
+ ../conf/conf.h ../lib/timer.h ../../filter/filter.h ../../nest/route.h \
+ ../../nest/protocol.h ../../nest/attrs.h
+trie.o: ../../filter/trie.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../conf/conf.h \
+ ../lib/timer.h ../../filter/filter.h ../../nest/route.h \
+ ../../nest/protocol.h ../../nest/attrs.h

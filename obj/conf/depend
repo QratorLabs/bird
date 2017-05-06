@@ -1,0 +1,38 @@
+cf-parse.tab.o: cf-parse.tab.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../conf/conf.h \
+ ../lib/timer.h ../lib/socket.h ../../nest/protocol.h ../../nest/iface.h \
+ ../../nest/route.h ../../nest/cli.h ../lib/event.h ../../filter/filter.h \
+ ../../nest/attrs.h ../lib/unix.h ../lib/krt.h ../lib/krt-sys.h \
+ ../../nest/rt-dev.h ../../nest/password.h ../../nest/cmds.h \
+ ../../proto/bfd/bfd.h ../../lib/hash.h ../../nest/bfd.h \
+ ../../proto/bfd/io.h ../../proto/bgp/bgp.h ../../proto/ospf/ospf.h \
+ ../lib/checksum.h ../lib/slists.h ../../nest/locks.h \
+ ../../proto/ospf/rt.h ../../proto/ospf/topology.h \
+ ../../proto/ospf/lsalib.h ../../proto/pipe/pipe.h ../../proto/rip/rip.h \
+ ../../proto/static/static.h
+cf-lex.o: cf-lex.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/route.h \
+ ../lib/timer.h ../../nest/protocol.h ../conf/conf.h \
+ ../../filter/filter.h ../../nest/attrs.h ../conf/cf-parse.tab.h \
+ ../conf/keywords.h ../lib/socket.h ../../nest/iface.h ../../nest/cli.h \
+ ../lib/event.h ../lib/unix.h ../lib/krt.h ../lib/krt-sys.h \
+ ../../nest/rt-dev.h ../../nest/password.h ../../nest/cmds.h \
+ ../../proto/bfd/bfd.h ../../lib/hash.h ../../nest/bfd.h \
+ ../../proto/bfd/io.h ../../proto/bgp/bgp.h ../../proto/ospf/ospf.h \
+ ../lib/checksum.h ../lib/slists.h ../../nest/locks.h \
+ ../../proto/ospf/rt.h ../../proto/ospf/topology.h \
+ ../../proto/ospf/lsalib.h ../../proto/pipe/pipe.h ../../proto/rip/rip.h \
+ ../../proto/static/static.h
+conf.o: conf.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/route.h \
+ ../lib/timer.h ../../nest/protocol.h ../conf/conf.h ../../nest/iface.h \
+ ../lib/event.h ../../filter/filter.h ../../nest/attrs.h

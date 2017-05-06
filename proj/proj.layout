@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="../nest/cli.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4917" topLine="123" />
+		</Cursor>
+	</File>
+	<File name="../client/client.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8244" topLine="420" />
+		</Cursor>
+	</File>
+	<File name="../lib/ip.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5246" topLine="201" />
+		</Cursor>
+	</File>
+	<File name="../nest/protocol.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="16125" topLine="357" />
+		</Cursor>
+	</File>
+	<File name="../obj/lib/krt.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="26508" topLine="1174" />
+		</Cursor>
+	</File>
+	<File name="../proto/bgp/attrs.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="25402" topLine="631" />
+		</Cursor>
+		<Folding>
+			<Collapse line="83" />
+			<Collapse line="91" />
+			<Collapse line="99" />
+			<Collapse line="118" />
+			<Collapse line="181" />
+			<Collapse line="187" />
+			<Collapse line="226" />
+			<Collapse line="234" />
+			<Collapse line="247" />
+			<Collapse line="266" />
+			<Collapse line="276" />
+			<Collapse line="286" />
+			<Collapse line="291" />
+			<Collapse line="341" />
+			<Collapse line="350" />
+			<Collapse line="363" />
+			<Collapse line="415" />
+			<Collapse line="433" />
+			<Collapse line="483" />
+		</Folding>
+	</File>
+	<File name="../nest/cmds.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../obj/lib/string.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="272" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../lib/printf.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9654" topLine="420" />
+		</Cursor>
+	</File>
+	<File name="../nest/rt-table.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="63626" topLine="2558" />
+		</Cursor>
+	</File>
+	<File name="../obj/conf/cf-parse.tab.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7238" topLine="326" />
+		</Cursor>
+	</File>
+	<File name="../nest/route.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6535" topLine="167" />
+		</Cursor>
+	</File>
+	<File name="../filter/filter.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3571" topLine="103" />
+		</Cursor>
+	</File>
+	<File name="../obj/conf/cf-parse.y" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="25839" topLine="1048" />
+		</Cursor>
+	</File>
+	<File name="../obj/conf/cf-lex.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="65098" topLine="2533" />
+		</Cursor>
+	</File>
+	<File name="../nest/config.Y" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../filter/config.Y" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="25106" topLine="904" />
+		</Cursor>
+	</File>
+	<File name="../conf/confbase.Y" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3816" topLine="176" />
+		</Cursor>
+	</File>
+	<File name="../sysdep/unix/krt.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3214" topLine="93" />
+		</Cursor>
+	</File>
+	<File name="../filter/f-util.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="232" topLine="10" />
+		</Cursor>
+	</File>
+	<File name="../proto/bgp/bgp.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11707" topLine="378" />
+		</Cursor>
+	</File>
+	<File name="../conf/conf.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5832" topLine="127" />
+		</Cursor>
+	</File>
+	<File name="../nest/attrs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3598" topLine="76" />
+		</Cursor>
+	</File>
+	<File name="../nest/rt-roa.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="216" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../lib/lists.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2184" topLine="35" />
+		</Cursor>
+	</File>
+	<File name="../nest/proto.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="23528" topLine="818" />
+		</Cursor>
+	</File>
+	<File name="../conf/conf.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13713" topLine="483" />
+		</Cursor>
+	</File>
+	<File name="../proto/rip/rip.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9541" topLine="335" />
+		</Cursor>
+	</File>
+	<File name="../nest/rt-attr.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="27311" topLine="1218" />
+		</Cursor>
+	</File>
+	<File name="../nest/rt-fib.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9005" topLine="353" />
+		</Cursor>
+	</File>
+	<File name="../conf/cf-lex.l" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14231" topLine="650" />
+		</Cursor>
+	</File>
+	<File name="../proto/static/static.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3477" topLine="100" />
+		</Cursor>
+	</File>
+	<File name="../client/birdcl.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="518" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../lib/resource.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3027" topLine="74" />
+		</Cursor>
+	</File>
+	<File name="../nest/cli.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1671" topLine="43" />
+		</Cursor>
+	</File>
+	<File name="../nest/cmds.c" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2557" topLine="74" />
+		</Cursor>
+	</File>
+	<File name="../proto/bgp/packets.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10503" topLine="153" />
+		</Cursor>
+		<Folding>
+			<Collapse line="86" />
+			<Collapse line="100" />
+			<Collapse line="107" />
+			<Collapse line="120" />
+			<Collapse line="147" />
+			<Collapse line="160" />
+			<Collapse line="168" />
+			<Collapse line="187" />
+		</Folding>
+	</File>
+	<File name="../proto/bgp/config.Y" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7118" topLine="125" />
+		</Cursor>
+	</File>
+	<File name="../proto/ospf/dbdes.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="418" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../client/birdc.c" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2448" topLine="118" />
+		</Cursor>
+	</File>
+	<File name="../proto/bgp/bgp.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10215" topLine="201" />
+		</Cursor>
+	</File>
+	<File name="../obj/lib/event.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1823" topLine="64" />
+		</Cursor>
+	</File>
+	<File name="../filter/filter.c" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="39837" topLine="1552" />
+		</Cursor>
+	</File>
+	<File name="../obj/conf/cf-lex.l" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3092" topLine="140" />
+		</Cursor>
+	</File>
+	<File name="../obj/lib/lists.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="498" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="../lib/resource.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8191" topLine="362" />
+		</Cursor>
+	</File>
+	<File name="../lib/birdlib.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="334" topLine="0" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

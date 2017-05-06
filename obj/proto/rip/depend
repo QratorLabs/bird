@@ -1,0 +1,20 @@
+rip.o: ../../../proto/rip/rip.c ../../../nest/bird.h \
+ ../../../sysdep/config.h ../../sysdep/autoconf.h \
+ ../../.././sysdep/cf/linux.h ../../sysdep/paths.h ../../lib/birdlib.h \
+ ../../lib/timer.h ../../lib/resource.h ../../lib/lists.h \
+ ../../lib/lists.c ../../lib/alloca.h ../../lib/ip.h ../../lib/endian.h \
+ ../../lib/string.h ../../lib/bitops.h ../../lib/unaligned.h \
+ ../../../nest/iface.h ../../../nest/protocol.h ../../lib/timer.h \
+ ../../conf/conf.h ../../../nest/route.h ../../lib/socket.h \
+ ../../../proto/rip/rip.h ../../../nest/password.h ../../../nest/locks.h \
+ ../../lib/event.h
+auth.o: ../../../proto/rip/auth.c ../../../nest/bird.h \
+ ../../../sysdep/config.h ../../sysdep/autoconf.h \
+ ../../.././sysdep/cf/linux.h ../../sysdep/paths.h ../../lib/birdlib.h \
+ ../../lib/timer.h ../../lib/resource.h ../../lib/lists.h \
+ ../../lib/lists.c ../../lib/alloca.h ../../lib/ip.h ../../lib/endian.h \
+ ../../lib/string.h ../../lib/bitops.h ../../lib/unaligned.h \
+ ../../../nest/iface.h ../../../nest/protocol.h ../../lib/timer.h \
+ ../../conf/conf.h ../../../nest/route.h ../../lib/socket.h \
+ ../../lib/md5.h ../../../proto/rip/rip.h ../../../nest/password.h \
+ ../../../nest/locks.h ../../lib/event.h

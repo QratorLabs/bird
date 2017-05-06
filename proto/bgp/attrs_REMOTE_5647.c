@@ -326,6 +326,8 @@ static struct attr_desc bgp_attr_table[] = {
   { "as4_aggregator", -1, BAF_OPTIONAL | BAF_TRANSITIVE, EAF_TYPE_OPAQUE, 1,	/* BA_AS4_PATH */
     NULL, NULL },
   { "iotc", 0, BAF_OPTIONAL, EAF_TYPE_INT, 0,   /*BA_iOTC*/
+    NULL, NULL },
+  { "eotc", 4, BAF_OPTIONAL | BAF_TRANSITIVE, EAF_TYPE_INT, 1,        /* BA_eOTC */
     NULL, NULL }
 };
 
@@ -343,7 +345,8 @@ bgp_alloc_adata(struct linpool *pool, unsigned len)
   return ad;
 }
 
-static void
+/* static */
+void
 bgp_set_attr(eattr *e, unsigned attr, uintptr_t val)
 {
   ASSERT(ATTR_KNOWN(attr));
@@ -794,10 +797,7 @@ bgp_get_bucket(struct bgp_proto *p, net *n, ea_list *attrs, int originate)
       code = EA_ID(a->id);
       if (ATTR_KNOWN(code))
 	{
-	  if (!bgp_attr_table[code].allow_in_ebgp && !p->is_internal &&
-	      !(code == BA_LOCAL_PREF &&
-	        p->cf->role == ROLE_INTE &&
-	        p->conn->neighbor_role == ROLE_INTE))
+	  if (!bgp_attr_table[code].allow_in_ebgp && !p->is_internal)
 	    continue;
 	  /* The flags might have been zero if the attr was added by filters */
 	  a->flags = (a->flags & BAF_PARTIAL) | bgp_attr_table[code].expected_flags;
@@ -1006,6 +1006,15 @@ bgp_create_attrs(struct bgp_proto *p, rte *e, ea_list **attrs, struct linpool *p
 
   bgp_set_attr(ea->attrs+3, BA_LOCAL_PREF, p->cf->default_local_pref);
 
+  //The simplest way to add attribute during creation
+  int prefix_role = ROLE_UNDE;
+  if (p->cf->role == ROLE_COMP) prefix_role = rm_run(p->cf->role_map, e->net);
+  if (p->cf->role == ROLE_PEER ||
+      p->cf->role == ROLE_PROV ||
+      prefix_role == ROLE_PEER ||
+      prefix_role == ROLE_PROV)
+    bgp_attach_attr(attrs, pool, BA_eOTC, p->local_as);
+
 
   return 0;				/* Leave decision to the filters */
 }
@@ -1053,7 +1062,16 @@ bgp_update_attrs(struct bgp_proto *p, rte *e, ea_list **attrs, struct linpool *p
 {
   eattr *a;
 
-
+  int prefix_role = ROLE_UNDE;
+  if (p->cf->role == ROLE_COMP) prefix_role = rm_run(p->cf->role_map, e->net);
+  if (p->cf->role == ROLE_PEER ||
+      p->cf->role == ROLE_PROV ||
+      prefix_role == ROLE_PEER ||
+      prefix_role == ROLE_PROV)
+    {
+      a = ea_find(e->attrs->eattrs, EA_CODE(EAP_BGP, BA_eOTC));
+      if (!a) bgp_attach_attr(attrs, pool, BA_eOTC, p->local_as);
+    }
 
 
   if (!p->is_internal && !p->rs_client)
@@ -1064,11 +1082,8 @@ bgp_update_attrs(struct bgp_proto *p, rte *e, ea_list **attrs, struct linpool *p
        * propagated to other neighboring ASes.
        * Perhaps it would be better to undefine it.
        */
-
-       /* UPDATE: propagate MULTI_EXIT_DISC attribute between neighbors with ROLE_INTE
-        */
       a = ea_find(e->attrs->eattrs, EA_CODE(EAP_BGP, BA_MULTI_EXIT_DISC));
-      if (a && !(p->cf->role == ROLE_INTE && p->conn->neighbor_role == ROLE_INTE))
+      if (a)
 	bgp_attach_attr(attrs, pool, BA_MULTI_EXIT_DISC, 0);
     }
 
@@ -1289,14 +1304,11 @@ bgp_rte_better(rte *new, rte *old)
 	return 0;
     }
 
-  /* New characteristic to measure routes. Routes from external
-  roles (peer, customer, provider) are more preferable than from
-  internal role. Replace ebgp > ibgp. For more details look
-  at [draft-ymbk-idr-isp-border]. */
-  if (new_bgp->cf->role != ROLE_INTE && old_bgp->cf->role == ROLE_INTE)
-    return 1;
-  if (new_bgp->cf->role == ROLE_INTE && old_bgp->cf->role != ROLE_INTE)
+  /* RFC 4271 9.1.2.2. d) Prefer external peers */
+  if (new_bgp->is_internal > old_bgp->is_internal)
     return 0;
+  if (new_bgp->is_internal < old_bgp->is_internal)
+    return 1;
 
   /* RFC 4271 9.1.2.2. e) Compare IGP metrics */
   n = new_bgp->cf->igp_metric ? new->attrs->igp_metric : 0;
@@ -1399,11 +1411,8 @@ bgp_rte_mergable(rte *pri, rte *sec)
 	return 0;
     }
 
-  /* New characteristic to measure routes. Routes from external
-  roles (peer, customer, provider) are more preferable than from
-  internal role. Replace ebgp > ibgp. */
-  if (pri_bgp->cf->role == ROLE_INTE && sec_bgp->cf->role != ROLE_INTE ||
-      sec_bgp->cf->role == ROLE_INTE && pri_bgp->cf->role != ROLE_INTE)
+  /* RFC 4271 9.1.2.2. d) Prefer external peers */
+  if (pri_bgp->is_internal != sec_bgp->is_internal)
     return 0;
 
   /* RFC 4271 9.1.2.2. e) Compare IGP metrics */
@@ -1760,8 +1769,7 @@ bgp_decode_attrs(struct bgp_conn *conn, byte *attr, uint len, struct linpool *po
 	    { errcode = 5; goto err; }
 	  if ((desc->expected_flags ^ flags) & (BAF_OPTIONAL | BAF_TRANSITIVE))
 	    { errcode = 4; goto err; }
-	  if (!desc->allow_in_ebgp && !bgp->is_internal &&
-	      !(code == BA_LOCAL_PREF && bgp->cf->role == ROLE_INTE && bgp->conn->neighbor_role == ROLE_INTE))
+	  if (!desc->allow_in_ebgp && !bgp->is_internal)
 	    continue;
 	  if (desc->validate)
 	    {

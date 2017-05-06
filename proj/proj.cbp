@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="proj" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/proj" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/proj" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../Doc" />
+		<Unit filename="../INSTALL" />
+		<Unit filename="../Makefile" />
+		<Unit filename="../NEWS" />
+		<Unit filename="../README" />
+		<Unit filename="../README~" />
+		<Unit filename="../TODO" />
+		<Unit filename="../aclocal.m4" />
+		<Unit filename="../bird" />
+		<Unit filename="../bird.conf" />
+		<Unit filename="../birdc" />
+		<Unit filename="../birdcl" />
+		<Unit filename="../client/Doc" />
+		<Unit filename="../client/Makefile" />
+		<Unit filename="../client/birdc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../client/birdcl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../client/client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../client/client.h" />
+		<Unit filename="../client/cmds.m4" />
+		<Unit filename="../client/commands.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../client/util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../conf/Doc" />
+		<Unit filename="../conf/Makefile" />
+		<Unit filename="../conf/cf-lex.l">
+			<Option compile="1" />
+		</Unit>
+		<Unit filename="../conf/conf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../conf/conf.h" />
+		<Unit filename="../conf/confbase.Y" />
+		<Unit filename="../conf/gen_commands.m4" />
+		<Unit filename="../conf/gen_keywords.m4" />
+		<Unit filename="../conf/gen_parser.m4" />
+		<Unit filename="../config.log" />
+		<Unit filename="../config.status" />
+		<Unit filename="../configure" />
+		<Unit filename="../configure.in" />
+		<Unit filename="../doc/Doc" />
+		<Unit filename="../doc/LinuxDocTools.pm" />
+		<Unit filename="../doc/Makefile" />
+		<Unit filename="../doc/bird.conf.example" />
+		<Unit filename="../doc/bird.sgml" />
+		<Unit filename="../doc/kernel-doc" />
+		<Unit filename="../doc/old/banner.tex" />
+		<Unit filename="../doc/old/status.tex" />
+		<Unit filename="../doc/prog-foot.sgml" />
+		<Unit filename="../doc/prog-head.sgml" />
+		<Unit filename="../doc/prog-intro.sgml" />
+		<Unit filename="../doc/prog-spell.sed" />
+		<Unit filename="../doc/reply_codes" />
+		<Unit filename="../doc/sbase/VERSION" />
+		<Unit filename="../doc/sbase/dist/birddoc/groff/mapping" />
+		<Unit filename="../doc/sbase/dist/birddoc/html/mapping" />
+		<Unit filename="../doc/sbase/dist/birddoc/latex2e/mapping" />
+		<Unit filename="../doc/sbase/dist/fmt_html.pl" />
+		<Unit filename="../doc/sbase/dist/fmt_latex2e.pl" />
+		<Unit filename="../doc/sbase/dist/fmt_txt.pl" />
+		<Unit filename="../doc/sbase/dtd/birddoc.dtd" />
+		<Unit filename="../doc/sbase/dtd/catalog" />
+		<Unit filename="../doc/sbase/dtd/common" />
+		<Unit filename="../doc/sbase/dtd/isoent" />
+		<Unit filename="../doc/sgml2html" />
+		<Unit filename="../doc/sgml2latex" />
+		<Unit filename="../doc/sgml2txt" />
+		<Unit filename="../doc/slides/Makefile" />
+		<Unit filename="../doc/slides/logo.eps" />
+		<Unit filename="../doc/slides/obr1.eps" />
+		<Unit filename="../doc/slides/obr2.eps" />
+		<Unit filename="../doc/slides/obr5.eps" />
+		<Unit filename="../doc/slides/slides.tex" />
+		<Unit filename="../doc/slt2001/Makefile" />
+		<Unit filename="../doc/slt2001/slt.tex" />
+		<Unit filename="../doc/tex/birddoc.sty" />
+		<Unit filename="../doc/tex/null.sty" />
+		<Unit filename="../doc/tex/qwertz.sty" />
+		<Unit filename="../doc/tex/url.sty" />
+		<Unit filename="../filter/Doc" />
+		<Unit filename="../filter/Makefile" />
+		<Unit filename="../filter/config.Y" />
+		<Unit filename="../filter/f-util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../filter/filter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../filter/filter.h" />
+		<Unit filename="../filter/test.conf" />
+		<Unit filename="../filter/test.conf.inc" />
+		<Unit filename="../filter/test.conf2" />
+		<Unit filename="../filter/test6.conf" />
+		<Unit filename="../filter/tree.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../filter/trie.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/Doc" />
+		<Unit filename="../lib/Modules" />
+		<Unit filename="../lib/alloca.h" />
+		<Unit filename="../lib/birdlib.h" />
+		<Unit filename="../lib/bitops.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/bitops.h" />
+		<Unit filename="../lib/buffer.h" />
+		<Unit filename="../lib/checksum.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/checksum.h" />
+		<Unit filename="../lib/event.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/event.h" />
+		<Unit filename="../lib/fletcher16.h" />
+		<Unit filename="../lib/hash.h" />
+		<Unit filename="../lib/heap.h" />
+		<Unit filename="../lib/ip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/ip.h" />
+		<Unit filename="../lib/lists.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/lists.h" />
+		<Unit filename="../lib/md5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/md5.h" />
+		<Unit filename="../lib/mempool.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/patmatch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/printf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/resource.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/resource.h" />
+		<Unit filename="../lib/resource.sgml" />
+		<Unit filename="../lib/slab.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/slists.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/slists.h" />
+		<Unit filename="../lib/socket.h" />
+		<Unit filename="../lib/string.h" />
+		<Unit filename="../lib/tbf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/unaligned.h" />
+		<Unit filename="../lib/xmalloc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../misc/Makefile" />
+		<Unit filename="../misc/bird.init" />
+		<Unit filename="../misc/bird.spec" />
+		<Unit filename="../misc/cisco2list" />
+		<Unit filename="../misc/ips.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../misc/stats" />
+		<Unit filename="../nest/Doc" />
+		<Unit filename="../nest/Makefile" />
+		<Unit filename="../nest/a-path.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/a-set.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/attrs.h" />
+		<Unit filename="../nest/bfd.h" />
+		<Unit filename="../nest/bird.h" />
+		<Unit filename="../nest/cli.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/cli.h" />
+		<Unit filename="../nest/cmds.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/cmds.h" />
+		<Unit filename="../nest/config.Y" />
+		<Unit filename="../nest/iface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/iface.h" />
+		<Unit filename="../nest/locks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/locks.h" />
+		<Unit filename="../nest/mrtdump.h" />
+		<Unit filename="../nest/neighbor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/password.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/password.h" />
+		<Unit filename="../nest/proto-hooks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/proto.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/proto.sgml" />
+		<Unit filename="../nest/protocol.h" />
+		<Unit filename="../nest/route.h" />
+		<Unit filename="../nest/rt-attr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/rt-dev.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/rt-dev.h" />
+		<Unit filename="../nest/rt-fib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/rt-roa.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nest/rt-table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/Makefile" />
+		<Unit filename="../obj/Rules" />
+		<Unit filename="../obj/client/all.o" />
+		<Unit filename="../obj/client/birdc.o" />
+		<Unit filename="../obj/client/birdcl.o" />
+		<Unit filename="../obj/client/client.o" />
+		<Unit filename="../obj/client/commands.o" />
+		<Unit filename="../obj/client/depend" />
+		<Unit filename="../obj/client/util.o" />
+		<Unit filename="../obj/conf/Makefile" />
+		<Unit filename="../obj/conf/all.o" />
+		<Unit filename="../obj/conf/cf-lex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/conf/cf-lex.l">
+			<Option compile="1" />
+		</Unit>
+		<Unit filename="../obj/conf/cf-lex.o" />
+		<Unit filename="../obj/conf/cf-parse.output" />
+		<Unit filename="../obj/conf/cf-parse.tab.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/conf/cf-parse.tab.h" />
+		<Unit filename="../obj/conf/cf-parse.tab.o" />
+		<Unit filename="../obj/conf/cf-parse.y">
+			<Option compile="1" />
+		</Unit>
+		<Unit filename="../obj/conf/commands.h" />
+		<Unit filename="../obj/conf/conf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/conf/conf.h" />
+		<Unit filename="../obj/conf/conf.o" />
+		<Unit filename="../obj/conf/config.Y" />
+		<Unit filename="../obj/conf/depend" />
+		<Unit filename="../obj/conf/keywords.h" />
+		<Unit filename="../obj/conf/krt.Y" />
+		<Unit filename="../obj/conf/netlink.Y" />
+		<Unit filename="../obj/filter/all.o" />
+		<Unit filename="../obj/filter/depend" />
+		<Unit filename="../obj/filter/f-util.o" />
+		<Unit filename="../obj/filter/filter.o" />
+		<Unit filename="../obj/filter/tree.o" />
+		<Unit filename="../obj/filter/trie.o" />
+		<Unit filename="../obj/lib/Makefile" />
+		<Unit filename="../obj/lib/alloca.h" />
+		<Unit filename="../obj/lib/birdlib.a" />
+		<Unit filename="../obj/lib/birdlib.h" />
+		<Unit filename="../obj/lib/bitops.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/bitops.h" />
+		<Unit filename="../obj/lib/bitops.o" />
+		<Unit filename="../obj/lib/checksum.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/checksum.h" />
+		<Unit filename="../obj/lib/checksum.o" />
+		<Unit filename="../obj/lib/depend" />
+		<Unit filename="../obj/lib/endian.h" />
+		<Unit filename="../obj/lib/event.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/event.h" />
+		<Unit filename="../obj/lib/event.o" />
+		<Unit filename="../obj/lib/io.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/io.o" />
+		<Unit filename="../obj/lib/ip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/ip.h" />
+		<Unit filename="../obj/lib/ip.o" />
+		<Unit filename="../obj/lib/krt-sys.h" />
+		<Unit filename="../obj/lib/krt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/krt.h" />
+		<Unit filename="../obj/lib/krt.o" />
+		<Unit filename="../obj/lib/lists.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/lists.h" />
+		<Unit filename="../obj/lib/lists.o" />
+		<Unit filename="../obj/lib/log.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/log.o" />
+		<Unit filename="../obj/lib/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/main.o" />
+		<Unit filename="../obj/lib/md5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/md5.h" />
+		<Unit filename="../obj/lib/md5.o" />
+		<Unit filename="../obj/lib/mempool.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/mempool.o" />
+		<Unit filename="../obj/lib/netlink.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/netlink.o" />
+		<Unit filename="../obj/lib/patmatch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/patmatch.o" />
+		<Unit filename="../obj/lib/printf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/printf.o" />
+		<Unit filename="../obj/lib/random.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/random.o" />
+		<Unit filename="../obj/lib/resource.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/resource.h" />
+		<Unit filename="../obj/lib/resource.o" />
+		<Unit filename="../obj/lib/slab.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/slab.o" />
+		<Unit filename="../obj/lib/slists.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/slists.h" />
+		<Unit filename="../obj/lib/slists.o" />
+		<Unit filename="../obj/lib/socket.h" />
+		<Unit filename="../obj/lib/string.h" />
+		<Unit filename="../obj/lib/sysio.h" />
+		<Unit filename="../obj/lib/syspriv.h" />
+		<Unit filename="../obj/lib/tbf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/tbf.o" />
+		<Unit filename="../obj/lib/timer.h" />
+		<Unit filename="../obj/lib/unaligned.h" />
+		<Unit filename="../obj/lib/unix.h" />
+		<Unit filename="../obj/lib/xmalloc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../obj/lib/xmalloc.o" />
+		<Unit filename="../obj/nest/a-path.o" />
+		<Unit filename="../obj/nest/a-set.o" />
+		<Unit filename="../obj/nest/all.o" />
+		<Unit filename="../obj/nest/cli.o" />
+		<Unit filename="../obj/nest/cmds.o" />
+		<Unit filename="../obj/nest/depend" />
+		<Unit filename="../obj/nest/iface.o" />
+		<Unit filename="../obj/nest/locks.o" />
+		<Unit filename="../obj/nest/neighbor.o" />
+		<Unit filename="../obj/nest/password.o" />
+		<Unit filename="../obj/nest/proto.o" />
+		<Unit filename="../obj/nest/rt-attr.o" />
+		<Unit filename="../obj/nest/rt-dev.o" />
+		<Unit filename="../obj/nest/rt-fib.o" />
+		<Unit filename="../obj/nest/rt-roa.o" />
+		<Unit filename="../obj/nest/rt-table.o" />
+		<Unit filename="../obj/proto/bfd/all.o" />
+		<Unit filename="../obj/proto/bfd/bfd.o" />
+		<Unit filename="../obj/proto/bfd/depend" />
+		<Unit filename="../obj/proto/bfd/io.o" />
+		<Unit filename="../obj/proto/bfd/packets.o" />
+		<Unit filename="../obj/proto/bgp/all.o" />
+		<Unit filename="../obj/proto/bgp/attrs.o" />
+		<Unit filename="../obj/proto/bgp/bgp.o" />
+		<Unit filename="../obj/proto/bgp/depend" />
+		<Unit filename="../obj/proto/bgp/packets.o" />
+		<Unit filename="../obj/proto/ospf/all.o" />
+		<Unit filename="../obj/proto/ospf/dbdes.o" />
+		<Unit filename="../obj/proto/ospf/depend" />
+		<Unit filename="../obj/proto/ospf/hello.o" />
+		<Unit filename="../obj/proto/ospf/iface.o" />
+		<Unit filename="../obj/proto/ospf/lsack.o" />
+		<Unit filename="../obj/proto/ospf/lsalib.o" />
+		<Unit filename="../obj/proto/ospf/lsreq.o" />
+		<Unit filename="../obj/proto/ospf/lsupd.o" />
+		<Unit filename="../obj/proto/ospf/neighbor.o" />
+		<Unit filename="../obj/proto/ospf/ospf.o" />
+		<Unit filename="../obj/proto/ospf/packet.o" />
+		<Unit filename="../obj/proto/ospf/rt.o" />
+		<Unit filename="../obj/proto/ospf/topology.o" />
+		<Unit filename="../obj/proto/pipe/all.o" />
+		<Unit filename="../obj/proto/pipe/depend" />
+		<Unit filename="../obj/proto/pipe/pipe.o" />
+		<Unit filename="../obj/proto/rip/all.o" />
+		<Unit filename="../obj/proto/rip/auth.o" />
+		<Unit filename="../obj/proto/rip/depend" />
+		<Unit filename="../obj/proto/rip/rip.o" />
+		<Unit filename="../obj/proto/static/all.o" />
+		<Unit filename="../obj/proto/static/depend" />
+		<Unit filename="../obj/proto/static/static.o" />
+		<Unit filename="../obj/sysdep/autoconf.h" />
+		<Unit filename="../obj/sysdep/paths.h" />
+		<Unit filename="../proto/Doc" />
+		<Unit filename="../proto/bfd/Doc" />
+		<Unit filename="../proto/bfd/Makefile" />
+		<Unit filename="../proto/bfd/bfd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/bfd/bfd.h" />
+		<Unit filename="../proto/bfd/config.Y" />
+		<Unit filename="../proto/bfd/io.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/bfd/io.h" />
+		<Unit filename="../proto/bfd/packets.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/bgp/Doc" />
+		<Unit filename="../proto/bgp/Makefile" />
+		<Unit filename="../proto/bgp/attrs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/bgp/bgp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/bgp/bgp.h" />
+		<Unit filename="../proto/bgp/config.Y" />
+		<Unit filename="../proto/bgp/packets.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/Doc" />
+		<Unit filename="../proto/ospf/Makefile" />
+		<Unit filename="../proto/ospf/config.Y" />
+		<Unit filename="../proto/ospf/dbdes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/hello.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/iface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/lsack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/lsalib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/lsalib.h" />
+		<Unit filename="../proto/ospf/lsreq.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/lsupd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/neighbor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/ospf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/ospf.h" />
+		<Unit filename="../proto/ospf/packet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/rt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/rt.h" />
+		<Unit filename="../proto/ospf/topology.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/ospf/topology.h" />
+		<Unit filename="../proto/pipe/Doc" />
+		<Unit filename="../proto/pipe/Makefile" />
+		<Unit filename="../proto/pipe/config.Y" />
+		<Unit filename="../proto/pipe/pipe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/pipe/pipe.h" />
+		<Unit filename="../proto/radv/Doc" />
+		<Unit filename="../proto/radv/Makefile" />
+		<Unit filename="../proto/radv/config.Y" />
+		<Unit filename="../proto/radv/packets.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/radv/radv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/radv/radv.h" />
+		<Unit filename="../proto/rip/Doc" />
+		<Unit filename="../proto/rip/Makefile" />
+		<Unit filename="../proto/rip/auth.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/rip/config.Y" />
+		<Unit filename="../proto/rip/rip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/rip/rip.h" />
+		<Unit filename="../proto/static/Doc" />
+		<Unit filename="../proto/static/Makefile" />
+		<Unit filename="../proto/static/config.Y" />
+		<Unit filename="../proto/static/static.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../proto/static/static.h" />
+		<Unit filename="../sysdep/Doc" />
+		<Unit filename="../sysdep/autoconf.h.in" />
+		<Unit filename="../sysdep/bsd/Modules" />
+		<Unit filename="../sysdep/bsd/krt-sock.Y" />
+		<Unit filename="../sysdep/bsd/krt-sock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sysdep/bsd/krt-sys.h" />
+		<Unit filename="../sysdep/bsd/sysio.h" />
+		<Unit filename="../sysdep/cf/README" />
+		<Unit filename="../sysdep/cf/bsd-v6.h" />
+		<Unit filename="../sysdep/cf/bsd.h" />
+		<Unit filename="../sysdep/cf/linux-v6.h" />
+		<Unit filename="../sysdep/cf/linux.h" />
+		<Unit filename="../sysdep/config.h" />
+		<Unit filename="../sysdep/linux/Modules" />
+		<Unit filename="../sysdep/linux/krt-sys.h" />
+		<Unit filename="../sysdep/linux/netlink.Y" />
+		<Unit filename="../sysdep/linux/netlink.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sysdep/linux/sysio.h" />
+		<Unit filename="../sysdep/linux/syspriv.h" />
+		<Unit filename="../sysdep/sysdep.sgml" />
+		<Unit filename="../sysdep/unix/Doc" />
+		<Unit filename="../sysdep/unix/Modules" />
+		<Unit filename="../sysdep/unix/config.Y" />
+		<Unit filename="../sysdep/unix/endian.h" />
+		<Unit filename="../sysdep/unix/io.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sysdep/unix/krt.Y" />
+		<Unit filename="../sysdep/unix/krt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sysdep/unix/krt.h" />
+		<Unit filename="../sysdep/unix/log.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sysdep/unix/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sysdep/unix/random.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sysdep/unix/timer.h" />
+		<Unit filename="../sysdep/unix/unix.h" />
+		<Unit filename="../tools/Makefile-top.in" />
+		<Unit filename="../tools/Makefile.in" />
+		<Unit filename="../tools/Rules.in" />
+		<Unit filename="../tools/config.guess" />
+		<Unit filename="../tools/config.sub" />
+		<Unit filename="../tools/cvslog" />
+		<Unit filename="../tools/gendist" />
+		<Unit filename="../tools/install-sh" />
+		<Unit filename="../tools/mergedirs" />
+		<Unit filename="../tools/progdoc" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

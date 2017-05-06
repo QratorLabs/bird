@@ -1,0 +1,91 @@
+# Makefile fragments for the BIRD Internet Routing Daemon
+# (c) 1999--2000 Martin Mares <mj@ucw.cz>
+
+srcdir=$(root-rel)..
+srcdir_abs := $(shell cd $(srcdir) ; pwd)
+objdir=obj
+exedir=..
+
+protocols=bfd bgp ospf pipe rip static
+static-dirs := nest filter $(addprefix proto/,$(protocols))
+static-dir-paths := $(addprefix $(srcdir)/,$(static-dirs))
+dynamic-dirs := lib conf
+dynamic-dir-paths := $(dynamic-dirs)
+client-dirs := client
+client-dir-paths := $(client-dirs)
+doc-dirs := doc
+doc-dir-paths := $(doc-dirs)
+
+all-dirs:=$(static-dirs) $(dynamic-dirs) $(client-dirs) $(doc-dirs)
+clean-dirs:=$(all-dirs) proto sysdep
+
+CPPFLAGS=-I$(root-rel) -I$(srcdir) 
+CFLAGS=$(CPPFLAGS) -g -O2 -pthread -Wall -Wstrict-prototypes -Wno-parentheses -Wno-pointer-sign -fno-strict-aliasing -fno-strict-overflow
+LDFLAGS= -pthread
+LIBS=
+CLIENT_LIBS=-lreadline -lhistory -lncurses
+CC=gcc
+M4=m4
+BISON=bison
+FLEX=flex
+RANLIB=ranlib
+INSTALL=/usr/bin/install -c
+INSTALL_PROGRAM=${INSTALL}
+INSTALL_DATA=${INSTALL} -m 644
+
+prefix=/usr/local
+exec_prefix=${prefix}
+bindir=${exec_prefix}/bin
+sbindir=${exec_prefix}/sbin
+sysconfdir=${prefix}/etc
+localstatedir=${prefix}/var
+docdir=/usr/local/doc
+
+ifdef source
+
+objs := $(subst .c,.o,$(source))
+
+ifdef dir-name
+src-path := $(srcdir)/$(dir-name)/
+endif
+
+all:
+	cd $(root-rel) && make
+
+ifdef lib-dest
+
+subdir: $(lib-dest)
+
+$(lib-dest): $(objs)
+	rm -f $@
+	ar rcs $@ $^
+	$(RANLIB) $@
+
+else
+
+subdir: all.o
+
+all.o: $(objs)
+#       $(LD) -r -o $@ $^
+#	Changed to $(CC) because $(LD) has problems with crosscompiling
+	@echo LD -r -o $@ $^
+	@$(CC) -nostdlib -r -o $@ $^
+
+endif
+
+%.o: $(src-path)%.c
+	@echo CC -o $@ -c $<
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+ifndef source-dep
+source-dep := $(source)
+endif
+
+depend:
+	$(CC) $(CPPFLAGS) -MM $(addprefix $(src-path),$(source-dep)) >depend
+
+ifneq ($(wildcard depend),)
+include depend
+endif
+
+endif

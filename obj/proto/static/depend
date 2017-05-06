@@ -1,0 +1,10 @@
+static.o: ../../../proto/static/static.c ../../../nest/bird.h \
+ ../../../sysdep/config.h ../../sysdep/autoconf.h \
+ ../../.././sysdep/cf/linux.h ../../sysdep/paths.h ../../lib/birdlib.h \
+ ../../lib/timer.h ../../lib/resource.h ../../lib/lists.h \
+ ../../lib/lists.c ../../lib/alloca.h ../../lib/ip.h ../../lib/endian.h \
+ ../../lib/string.h ../../lib/bitops.h ../../lib/unaligned.h \
+ ../../../nest/iface.h ../../../nest/protocol.h ../../lib/timer.h \
+ ../../conf/conf.h ../../../nest/route.h ../../../nest/cli.h \
+ ../../lib/event.h ../../../filter/filter.h ../../../nest/attrs.h \
+ ../../lib/alloca.h ../../../proto/static/static.h ../../../nest/bfd.h

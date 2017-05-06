@@ -1,0 +1,10 @@
+2016-11-08 16:06:36 <ERR> Static route destination 127.0.15.1 is invalid. Ignoring.
+2016-11-08 16:06:36 <INFO> Started
+2016-11-08 16:12:13 <INFO> Shutting down
+2016-11-08 16:12:13 <FATAL> Shutdown completed
+2017-05-05 13:40:36 <ERR> Static route destination 127.0.15.1 is invalid. Ignoring.
+2017-05-05 13:40:36 <INFO> Started
+2017-05-05 13:40:48 <ERR> Static route destination 127.0.15.1 is invalid. Ignoring.
+2017-05-05 13:40:48 <INFO> Started
+2017-05-05 13:42:35 <INFO> Shutting down
+2017-05-05 13:42:35 <FATAL> Shutdown completed

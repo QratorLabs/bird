@@ -326,6 +326,8 @@ static struct attr_desc bgp_attr_table[] = {
   { "as4_aggregator", -1, BAF_OPTIONAL | BAF_TRANSITIVE, EAF_TYPE_OPAQUE, 1,	/* BA_AS4_PATH */
     NULL, NULL },
   { "iotc", 0, BAF_OPTIONAL, EAF_TYPE_INT, 0,   /*BA_iOTC*/
+    NULL, NULL },
+  { "eotc", 4, BAF_OPTIONAL | BAF_TRANSITIVE, EAF_TYPE_INT, 1,        /* BA_eOTC */
     NULL, NULL }
 };
 
@@ -343,7 +345,8 @@ bgp_alloc_adata(struct linpool *pool, unsigned len)
   return ad;
 }
 
-static void
+/* static */
+void
 bgp_set_attr(eattr *e, unsigned attr, uintptr_t val)
 {
   ASSERT(ATTR_KNOWN(attr));
@@ -1006,6 +1009,15 @@ bgp_create_attrs(struct bgp_proto *p, rte *e, ea_list **attrs, struct linpool *p
 
   bgp_set_attr(ea->attrs+3, BA_LOCAL_PREF, p->cf->default_local_pref);
 
+  //The simplest way to add attribute during creation
+  int prefix_role = ROLE_UNDE;
+  if (p->cf->role == ROLE_COMP) prefix_role = rm_run(p->cf->role_map, e->net);
+  if (p->cf->role == ROLE_PEER ||
+      p->cf->role == ROLE_PROV ||
+      prefix_role == ROLE_PEER ||
+      prefix_role == ROLE_PROV)
+    bgp_attach_attr(attrs, pool, BA_eOTC, p->local_as);
+
 
   return 0;				/* Leave decision to the filters */
 }
@@ -1053,7 +1065,16 @@ bgp_update_attrs(struct bgp_proto *p, rte *e, ea_list **attrs, struct linpool *p
 {
   eattr *a;
 
-
+  int prefix_role = ROLE_UNDE;
+  if (p->cf->role == ROLE_COMP) prefix_role = rm_run(p->cf->role_map, e->net);
+  if (p->cf->role == ROLE_PEER ||
+      p->cf->role == ROLE_PROV ||
+      prefix_role == ROLE_PEER ||
+      prefix_role == ROLE_PROV)
+    {
+      a = ea_find(e->attrs->eattrs, EA_CODE(EAP_BGP, BA_eOTC));
+      if (!a) bgp_attach_attr(attrs, pool, BA_eOTC, p->local_as);
+    }
 
 
   if (!p->is_internal && !p->rs_client)
@@ -1291,8 +1312,7 @@ bgp_rte_better(rte *new, rte *old)
 
   /* New characteristic to measure routes. Routes from external
   roles (peer, customer, provider) are more preferable than from
-  internal role. Replace ebgp > ibgp. For more details look
-  at [draft-ymbk-idr-isp-border]. */
+  internal role. Replace ebgp > ibgp. */
   if (new_bgp->cf->role != ROLE_INTE && old_bgp->cf->role == ROLE_INTE)
     return 1;
   if (new_bgp->cf->role == ROLE_INTE && old_bgp->cf->role != ROLE_INTE)
@@ -1882,6 +1902,27 @@ bgp_decode_attrs(struct bgp_conn *conn, byte *attr, uint len, struct linpool *po
   if (!(seen[0] & (1 << BA_LOCAL_PREF)))
     bgp_attach_attr(&a->eattrs, pool, BA_LOCAL_PREF, bgp->cf->default_local_pref);
 
+<<<<<<< HEAD
+  if (conn->bgp->cf->role == ROLE_PEER)
+    bgp_set_attr(ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_LOCAL_PREF)), BA_LOCAL_PREF, conn->bgp->cf->peer_local_pref);
+
+  if (conn->bgp->cf->role == ROLE_CUST)
+    bgp_set_attr(ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_LOCAL_PREF)), BA_LOCAL_PREF, conn->bgp->cf->customer_local_pref);
+
+  if (conn->bgp->cf->role == ROLE_PROV)
+    bgp_set_attr(ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_LOCAL_PREF)), BA_LOCAL_PREF, conn->bgp->cf->provider_local_pref);
+
+   /* Lower in priority routes, that have already comen with BA_LOCAL_ANNOUNCE */
+   if ((conn->bgp->cf->role == ROLE_PEER || conn->bgp->cf->role == ROLE_CUST) &&
+     (seen[BA_LOCAL_ANNOUNCE / 8] & (1 << (BA_LOCAL_ANNOUNCE % 8))))
+         bgp_set_attr(ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_LOCAL_PREF)), BA_LOCAL_PREF, DEF_LOCAL_PREF_LEAK);
+
+   /* Add local announce to routes, that haven't this attribute yet */
+   if (conn->bgp->cf->role == ROLE_PEER || conn->bgp->cf->role == ROLE_PROV)
+     if (!(seen[BA_LOCAL_ANNOUNCE / 8] & (1 << (BA_LOCAL_ANNOUNCE % 8))))
+ 	   bgp_attach_attr(&a->eattrs, pool, BA_LOCAL_ANNOUNCE, 0);
+=======
+>>>>>>> master
 
 
   return a;

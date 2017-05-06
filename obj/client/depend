@@ -1,0 +1,28 @@
+commands.o: ../../client/commands.c ../../nest/bird.h \
+ ../../sysdep/config.h ../sysdep/autoconf.h ../.././sysdep/cf/linux.h \
+ ../sysdep/paths.h ../lib/birdlib.h ../lib/timer.h ../lib/resource.h \
+ ../lib/lists.h ../lib/lists.c ../lib/alloca.h ../lib/ip.h \
+ ../lib/endian.h ../lib/string.h ../lib/bitops.h ../lib/unaligned.h \
+ ../../client/client.h ../conf/commands.h
+util.o: ../../client/util.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../client/client.h
+client.o: ../../client/client.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../client/client.h \
+ ../../sysdep/unix/unix.h
+birdc.o: ../../client/birdc.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../client/client.h
+birdcl.o: ../../client/birdcl.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../client/client.h \
+ ../../sysdep/unix/unix.h

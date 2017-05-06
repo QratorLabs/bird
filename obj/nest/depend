@@ -1,0 +1,96 @@
+rt-table.o: ../../nest/rt-table.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/route.h \
+ ../lib/timer.h ../../nest/protocol.h ../conf/conf.h ../../nest/cli.h \
+ ../lib/event.h ../../nest/iface.h ../../filter/filter.h \
+ ../../nest/attrs.h ../lib/alloca.h
+rt-fib.o: ../../nest/rt-fib.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/route.h \
+ ../lib/timer.h ../../nest/protocol.h ../conf/conf.h
+rt-attr.o: ../../nest/rt-attr.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/route.h \
+ ../lib/timer.h ../../nest/protocol.h ../conf/conf.h ../../nest/iface.h \
+ ../../nest/cli.h ../lib/event.h ../../nest/attrs.h ../lib/alloca.h \
+ ../../lib/hash.h
+rt-roa.o: ../../nest/rt-roa.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/route.h \
+ ../lib/timer.h ../../nest/protocol.h ../conf/conf.h ../../nest/cli.h \
+ ../lib/event.h
+proto.o: ../../nest/proto.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/protocol.h \
+ ../lib/timer.h ../conf/conf.h ../lib/event.h ../../nest/route.h \
+ ../../nest/iface.h ../../nest/cli.h ../../filter/filter.h \
+ ../../nest/attrs.h
+iface.o: ../../nest/iface.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/iface.h \
+ ../../nest/protocol.h ../lib/timer.h ../conf/conf.h ../../nest/cli.h \
+ ../lib/event.h
+rt-dev.o: ../../nest/rt-dev.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/iface.h \
+ ../../nest/protocol.h ../lib/timer.h ../conf/conf.h ../../nest/route.h \
+ ../../nest/rt-dev.h
+password.o: ../../nest/password.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/password.h \
+ ../lib/timer.h
+cli.o: ../../nest/cli.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/cli.h \
+ ../lib/event.h ../conf/conf.h ../lib/timer.h
+locks.o: ../../nest/locks.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/locks.h \
+ ../lib/event.h ../../nest/iface.h
+cmds.o: ../../nest/cmds.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/protocol.h \
+ ../lib/timer.h ../conf/conf.h ../../nest/route.h ../../nest/cli.h \
+ ../lib/event.h ../../nest/cmds.h ../../filter/filter.h \
+ ../../nest/attrs.h
+neighbor.o: ../../nest/neighbor.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/iface.h \
+ ../../nest/protocol.h ../lib/timer.h ../conf/conf.h
+a-path.o: ../../nest/a-path.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/route.h \
+ ../lib/timer.h ../../nest/protocol.h ../conf/conf.h ../../nest/attrs.h \
+ ../../filter/filter.h
+a-set.o: ../../nest/a-set.c ../../nest/bird.h ../../sysdep/config.h \
+ ../sysdep/autoconf.h ../.././sysdep/cf/linux.h ../sysdep/paths.h \
+ ../lib/birdlib.h ../lib/timer.h ../lib/resource.h ../lib/lists.h \
+ ../lib/lists.c ../lib/alloca.h ../lib/ip.h ../lib/endian.h \
+ ../lib/string.h ../lib/bitops.h ../lib/unaligned.h ../../nest/route.h \
+ ../lib/timer.h ../../nest/protocol.h ../conf/conf.h ../../nest/attrs.h

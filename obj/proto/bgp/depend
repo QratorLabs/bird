@@ -1,0 +1,30 @@
+bgp.o: ../../../proto/bgp/bgp.c ../../../nest/bird.h \
+ ../../../sysdep/config.h ../../sysdep/autoconf.h \
+ ../../.././sysdep/cf/linux.h ../../sysdep/paths.h ../../lib/birdlib.h \
+ ../../lib/timer.h ../../lib/resource.h ../../lib/lists.h \
+ ../../lib/lists.c ../../lib/alloca.h ../../lib/ip.h ../../lib/endian.h \
+ ../../lib/string.h ../../lib/bitops.h ../../lib/unaligned.h \
+ ../../../nest/iface.h ../../../nest/protocol.h ../../lib/timer.h \
+ ../../conf/conf.h ../../../nest/route.h ../../../nest/cli.h \
+ ../../lib/event.h ../../../nest/locks.h ../../lib/socket.h \
+ ../../../proto/bgp/bgp.h ../../../nest/bfd.h ../../../lib/hash.h
+attrs.o: ../../../proto/bgp/attrs.c ../../../nest/bird.h \
+ ../../../sysdep/config.h ../../sysdep/autoconf.h \
+ ../../.././sysdep/cf/linux.h ../../sysdep/paths.h ../../lib/birdlib.h \
+ ../../lib/timer.h ../../lib/resource.h ../../lib/lists.h \
+ ../../lib/lists.c ../../lib/alloca.h ../../lib/ip.h ../../lib/endian.h \
+ ../../lib/string.h ../../lib/bitops.h ../../lib/unaligned.h \
+ ../../../nest/iface.h ../../../nest/protocol.h ../../lib/timer.h \
+ ../../conf/conf.h ../../../nest/route.h ../../../nest/attrs.h \
+ ../../../proto/bgp/bgp.h ../../../nest/bfd.h ../../../lib/hash.h
+packets.o: ../../../proto/bgp/packets.c ../../../nest/bird.h \
+ ../../../sysdep/config.h ../../sysdep/autoconf.h \
+ ../../.././sysdep/cf/linux.h ../../sysdep/paths.h ../../lib/birdlib.h \
+ ../../lib/timer.h ../../lib/resource.h ../../lib/lists.h \
+ ../../lib/lists.c ../../lib/alloca.h ../../lib/ip.h ../../lib/endian.h \
+ ../../lib/string.h ../../lib/bitops.h ../../lib/unaligned.h \
+ ../../../nest/iface.h ../../../nest/protocol.h ../../lib/timer.h \
+ ../../conf/conf.h ../../../nest/route.h ../../../nest/attrs.h \
+ ../../../nest/mrtdump.h ../../lib/socket.h ../../../nest/cli.h \
+ ../../lib/event.h ../../../proto/bgp/bgp.h ../../../nest/bfd.h \
+ ../../../lib/hash.h
