@@ -3,50 +3,13 @@
 
 
 
-This is a fork of BIRD Routing daemon (v1.5.0) with built in protection against
-BGP route leaks.  Route leak is a network anomaly, when route learned from
-provider or peer is announced to another provider or peer.  The effect of such
-issues could vary from increased network delays for victim (originator of prefix)
-to DoS for both victim and leaker.
-This BGP implementation supports full compatibility with other BGP implementations
-except the case where strict_mode is set by user.
-
-
-Change in BGP Configuration:
-In each BGP protocol section you must set a role option.  Currently, there
-are 5 possible values for this option:
-1) "provider" - sender is transit provider to neigbor;
-2) "customer" - sender is customer of neigbor;
-3) "peer" - sender and neighbor are peers;
-4) "internal" - sender is part of an internal AS of an organsation which has multiple ASs;
-5) "complex" - sender want to use per prefix role policies.
-Without setting a role in BGP protocol section you will receive error message
-from config parser.
-Also you could set strict_mode option in BGP protocol section. In this scenario
-BGP session with your neighbor will be established only if your neighbor also
-support Roles and corresponding Role is correct.
+This branch is an extension of master branch, that supports route leak detection
+mechanism, which is described in draft-ymbk-idr-bgp-eotr-policy.
 
 
 BGP Protocol modification:
-There are two main changes in BGP protocol behaviour:
-
-1. BGP Update modification: add mechanisms for route leak prevention and detection.
-
-For prevention:
-Use new nontransitive optional BGP PATH attribute iOTC (code 19 in this 
-realization) according to the following rules:
- "a. The iOTC attribute MUST be added to all incoming routes if the
- receiver’s Role is Customer or Peer;
- b. The iOTC attribute MUST be added to all incoming routes if the
- receiver’s Role is Complex and prefix Role is Customer or Peer;
- c. Routes with the iOTC attribute set MUST NOT be announced if the
- sender’s Role is Customer or Peer;
- d. Routes with the iOTC attribute set MUST NOT be announced if the
- sender’s Role is Complex and prefix Role is Customer or Peer."
-
-For detection:
-Use new transtive optional BGP PATH attribute eOTC (code 20 in this
-realization) according to the following rules:
+For detection route leaks was added new transtive optional BGP PATH attribute 
+eOTC (code 20 in this realization), which is following next set of rules:
  "a. If eOTC is not set and sender’s Role is Provider or Peer the eOTC
  attribute MUST be added with value equal to its ASN.
  b. If eOTC is not set and sender’s Role is Complex and prefix role
@@ -60,11 +23,6 @@ realization) according to the following rules:
  Provider or Peer, and eOTC value is not equal to neighbor ASN
  then such incoming route is route leak and MUST be given a lower
  local preference, or they MAY be dropped."
-
-2. BGP Open modification: to OPEN messages add new capability option "Role"
-(Capability code 38 in current realization), in which broadcast value of Role configuration option.
-Establish connection only if speaker and its neighbor have appropriate pair of
-Roles: (provider, customer), (customer, provider), (peer, peer), (internal, internal), (complex, complex).
 
 
 How to install BIRD:
