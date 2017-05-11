@@ -11,6 +11,13 @@ to DoS for both victim and leaker.
 This BGP implementation supports full compatibility with other BGP implementations
 except the case where strict_mode is set by user.
 
+Currently, this branch supports mechanism for route leak prevention and 
+procedure for mutual verification of peering relations, which are described in 
+draft-ymbk-idr-bgp-open-policy. Also in branch eOTC_support was added mechanism
+for route leak detection, described in draft-ymbk-idr-bgp-eotr-policy. Finally,
+in branch ISP_border in addition you can find some mechanism for supporting new
+definition of border between two ISP, which is described in draft-ymbk-idr-isp-border.
+
 
 Change in BGP Configuration:
 In each BGP protocol section you must set a role option.  Currently, there
@@ -30,11 +37,9 @@ support Roles and corresponding Role is correct.
 BGP Protocol modification:
 There are two main changes in BGP protocol behaviour:
 
-1. BGP Update modification: add mechanisms for route leak prevention and detection.
-
-For prevention:
-Use new nontransitive optional BGP PATH attribute iOTC (code 19 in this 
-realization) according to the following rules:
+1. BGP Update modification: add mechanisms for route leak prevention using
+new nontransitive optional BGP PATH attribute iOTC (code 19 in this 
+realization), which is following next set of rules:
  "a. The iOTC attribute MUST be added to all incoming routes if the
  receiver’s Role is Customer or Peer;
  b. The iOTC attribute MUST be added to all incoming routes if the
@@ -43,23 +48,6 @@ realization) according to the following rules:
  sender’s Role is Customer or Peer;
  d. Routes with the iOTC attribute set MUST NOT be announced if the
  sender’s Role is Complex and prefix Role is Customer or Peer."
-
-For detection:
-Use new transtive optional BGP PATH attribute eOTC (code 20 in this
-realization) according to the following rules:
- "a. If eOTC is not set and sender’s Role is Provider or Peer the eOTC
- attribute MUST be added with value equal to its ASN.
- b. If eOTC is not set and sender’s Role is Complex and prefix role
- is Provider or Peer the eOTC attribute MUST be added with value
- equal to its ASN.
- c. If eOTC is set, receiver’s Role is Provider or Peer, and its
- value is not equal to neighbor ASN then such incoming route is
- route leak and MUST be given a lower local preference, or they
- MAY be dropped.
- d. If eOTC is set, receiver’s is Complex and prefix role Role is
- Provider or Peer, and eOTC value is not equal to neighbor ASN
- then such incoming route is route leak and MUST be given a lower
- local preference, or they MAY be dropped."
 
 2. BGP Open modification: to OPEN messages add new capability option "Role"
 (Capability code 38 in current realization), in which broadcast value of Role configuration option.
